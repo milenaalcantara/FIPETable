@@ -20,7 +20,7 @@ struct Vehicle: Decodable {
     let dataConsulta: String
 }
 
-/**
+/*
  {
  "valor": "R$ 6.022,00",
  "marca": "Fiat",

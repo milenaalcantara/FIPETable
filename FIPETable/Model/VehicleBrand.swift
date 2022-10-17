@@ -7,12 +7,11 @@
 
 import Foundation
 
-struct VehicleBrand: Decodable {
+struct VehicleBrand: Codable {
     let nome: String
-    let valor: Int
+    let valor: String
 }
-
-/**
+/*
  {
  "nome": "AGRALE",
  "valor": "102"

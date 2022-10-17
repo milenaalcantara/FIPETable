@@ -7,14 +7,13 @@
 
 import UIKit
 
-class ListVehicleViewController: UIViewController {
+class VehicleListViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
-    
 
     /*
     // MARK: - Navigation
