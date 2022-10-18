@@ -28,8 +28,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         guard let windowScene = (scene as? UIWindowScene) else { return }
 
-        let window = UIWindow(windowScene: windowScene)
-        window.rootViewController = VehicleBrandsListViewController()
+//        let navController = UINavigationController(
+//            rootViewController: TabBarViewController()
+//        )
+//        navController.navigationBar.prefersLargeTitles = true
+
+        let window = UIWindow(frame: windowScene.coordinateSpace.bounds)
+        window.windowScene = windowScene
+        window.rootViewController = TabBarViewController()
         window.makeKeyAndVisible()
 
         self.window = window

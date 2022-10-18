@@ -11,8 +11,10 @@ class APIManager {
     static private let baseURL = "https://brasilapi.com.br/api/fipe"
     static private let decoder = JSONDecoder()
 
-    static func getVehicleBrands() async -> [VehicleBrand] {
-        let url = URL(string: "\(baseURL)/marcas/v1/")
+    // MARK: Get Vehicles
+
+    static func getVehicleBrands(vehicleType: String) async -> [VehicleBrand] {
+        let url = URL(string: "\(baseURL)/marcas/v1/\(vehicleType)/")
         var urlRequest = URLRequest(url: url!)
         urlRequest.httpMethod = "GET"
 
@@ -24,8 +26,8 @@ class APIManager {
 
             return allVehicleBrands
         } catch {
-            fatalError("Error: \(error)") // remover depois, lançar um modal ou screen not found
+            print("Error: \(error)") // remover depois, lançar um modal ou screen not found
+            return []
         }
-//        return []
     }
 }

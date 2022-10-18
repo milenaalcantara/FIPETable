@@ -7,7 +7,7 @@
 
 import UIKit
 
-class VehicleListViewController: UIViewController {
+class VehiclesPerBrandListViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

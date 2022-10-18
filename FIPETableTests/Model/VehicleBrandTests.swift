@@ -20,7 +20,7 @@ final class VehicleBrandTests: XCTestCase {
 
     func testAtributesVehicleBrandsModel() throws {
         let name = "Fiat"
-        let value = 12
+        let value = String(12)
 
         let vehicleBrandModel = VehicleBrand(
             nome: name,
@@ -29,14 +29,6 @@ final class VehicleBrandTests: XCTestCase {
 
         XCTAssertNotNil(vehicleBrandModel)
         XCTAssertEqual(vehicleBrandModel.nome, "Fiat")
-        XCTAssertEqual(vehicleBrandModel.valor, 12)
+        XCTAssertEqual(vehicleBrandModel.valor, "12")
     }
-
-//    func testPerformanceExample() throws {
-//        // This is an example of a performance test case.
-//        self.measure {
-//            // Put the code you want to measure the time of here.
-//        }
-//    }
-
 }
