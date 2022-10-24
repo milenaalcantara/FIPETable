@@ -9,13 +9,33 @@
 /* Begin PBXBuildFile section */
 		F366832C28F8586100073B31 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F366832B28F8586100073B31 /* AppDelegate.swift */; };
 		F366832E28F8586100073B31 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F366832D28F8586100073B31 /* SceneDelegate.swift */; };
-		F366833028F8586100073B31 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F366832F28F8586100073B31 /* ViewController.swift */; };
 		F366833628F8586100073B31 /* FIPETable.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F366833428F8586100073B31 /* FIPETable.xcdatamodeld */; };
 		F366833828F8586200073B31 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F366833728F8586200073B31 /* Assets.xcassets */; };
 		F366833B28F8586200073B31 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F366833928F8586200073B31 /* LaunchScreen.storyboard */; };
 		F366834628F8586200073B31 /* FIPETableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F366834528F8586200073B31 /* FIPETableTests.swift */; };
 		F366835028F8586200073B31 /* FIPETableUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F366834F28F8586200073B31 /* FIPETableUITests.swift */; };
 		F366835228F8586200073B31 /* FIPETableUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F366835128F8586200073B31 /* FIPETableUITestsLaunchTests.swift */; };
+		F366836728F85F4000073B31 /* VehicleBrand.swift in Sources */ = {isa = PBXBuildFile; fileRef = F366836628F85F4000073B31 /* VehicleBrand.swift */; };
+		F366836828F85F4000073B31 /* VehicleBrand.swift in Sources */ = {isa = PBXBuildFile; fileRef = F366836628F85F4000073B31 /* VehicleBrand.swift */; };
+		F366836A28F85F8100073B31 /* Vehicle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F366836928F85F8100073B31 /* Vehicle.swift */; };
+		F366836B28F85F8100073B31 /* Vehicle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F366836928F85F8100073B31 /* Vehicle.swift */; };
+		F366836D28F8718700073B31 /* ReferenceTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F366836C28F8718700073B31 /* ReferenceTable.swift */; };
+		F366836E28F8718700073B31 /* ReferenceTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F366836C28F8718700073B31 /* ReferenceTable.swift */; };
+		F366837028F8761700073B31 /* ListVehicleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F366836F28F8761700073B31 /* ListVehicleView.swift */; };
+		F366837128F8761700073B31 /* ListVehicleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F366836F28F8761700073B31 /* ListVehicleView.swift */; };
+		F366837328F8763C00073B31 /* VehicleDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F366837228F8763C00073B31 /* VehicleDetailsView.swift */; };
+		F366837528F8764B00073B31 /* VehicleDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F366837228F8763C00073B31 /* VehicleDetailsView.swift */; };
+		F366837728F8767100073B31 /* VehiclesPerBrandListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F366837628F8767100073B31 /* VehiclesPerBrandListViewController.swift */; };
+		F366837928F8768B00073B31 /* VehicleDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F366837828F8768B00073B31 /* VehicleDetailsViewController.swift */; };
+		F366837B28F876B400073B31 /* VehicleBrandsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F366837A28F876B400073B31 /* VehicleBrandsViewModel.swift */; };
+		F366837E28F8781B00073B31 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F366837D28F8781B00073B31 /* APIManager.swift */; };
+		F366839E28F9982900073B31 /* VehicleBrandTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F366839D28F9982900073B31 /* VehicleBrandTests.swift */; };
+		F366842828FDBCD800073B31 /* VehicleBrandsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F366842728FDBCD800073B31 /* VehicleBrandsTableViewCell.swift */; };
+		F366844E28FECF8D00073B31 /* CellIdentifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F366844D28FECF8D00073B31 /* CellIdentifiers.swift */; };
+		F366845128FF1E4E00073B31 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F366845028FF1E4E00073B31 /* TabBarViewController.swift */; };
+		F366845328FF20C000073B31 /* MotorcyclesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F366845228FF20C000073B31 /* MotorcyclesListViewController.swift */; };
+		F366845628FF20E100073B31 /* CarsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F366845528FF20E100073B31 /* CarsListViewController.swift */; };
+		F366845828FF20EF00073B31 /* TrucksListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F366845728FF20EF00073B31 /* TrucksListViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +59,6 @@
 		F366832828F8586100073B31 /* FIPETable.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FIPETable.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F366832B28F8586100073B31 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F366832D28F8586100073B31 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		F366832F28F8586100073B31 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		F366833528F8586100073B31 /* FIPETable.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FIPETable.xcdatamodel; sourceTree = "<group>"; };
 		F366833728F8586200073B31 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F366833A28F8586200073B31 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +68,22 @@
 		F366834B28F8586200073B31 /* FIPETableUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FIPETableUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F366834F28F8586200073B31 /* FIPETableUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FIPETableUITests.swift; sourceTree = "<group>"; };
 		F366835128F8586200073B31 /* FIPETableUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FIPETableUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		F366836628F85F4000073B31 /* VehicleBrand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleBrand.swift; sourceTree = "<group>"; };
+		F366836928F85F8100073B31 /* Vehicle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vehicle.swift; sourceTree = "<group>"; };
+		F366836C28F8718700073B31 /* ReferenceTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReferenceTable.swift; sourceTree = "<group>"; };
+		F366836F28F8761700073B31 /* ListVehicleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListVehicleView.swift; sourceTree = "<group>"; };
+		F366837228F8763C00073B31 /* VehicleDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleDetailsView.swift; sourceTree = "<group>"; };
+		F366837628F8767100073B31 /* VehiclesPerBrandListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehiclesPerBrandListViewController.swift; sourceTree = "<group>"; };
+		F366837828F8768B00073B31 /* VehicleDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = VehicleDetailsViewController.swift; path = FIPETable/Controller/VehicleDetailsViewController.swift; sourceTree = SOURCE_ROOT; };
+		F366837A28F876B400073B31 /* VehicleBrandsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleBrandsViewModel.swift; sourceTree = "<group>"; };
+		F366837D28F8781B00073B31 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		F366839D28F9982900073B31 /* VehicleBrandTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleBrandTests.swift; sourceTree = "<group>"; };
+		F366842728FDBCD800073B31 /* VehicleBrandsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleBrandsTableViewCell.swift; sourceTree = "<group>"; };
+		F366844D28FECF8D00073B31 /* CellIdentifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellIdentifiers.swift; sourceTree = "<group>"; };
+		F366845028FF1E4E00073B31 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		F366845228FF20C000073B31 /* MotorcyclesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotorcyclesListViewController.swift; sourceTree = "<group>"; };
+		F366845528FF20E100073B31 /* CarsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarsListViewController.swift; sourceTree = "<group>"; };
+		F366845728FF20EF00073B31 /* TrucksListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrucksListViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,13 +134,13 @@
 		F366832A28F8586100073B31 /* FIPETable */ = {
 			isa = PBXGroup;
 			children = (
-				F366832B28F8586100073B31 /* AppDelegate.swift */,
-				F366832D28F8586100073B31 /* SceneDelegate.swift */,
-				F366832F28F8586100073B31 /* ViewController.swift */,
-				F366833728F8586200073B31 /* Assets.xcassets */,
-				F366833928F8586200073B31 /* LaunchScreen.storyboard */,
+				F366837C28F8780B00073B31 /* Service */,
+				F366836428F85F0900073B31 /* Resource */,
+				F366836328F85F0100073B31 /* ViewModel */,
+				F366836228F85EFB00073B31 /* View */,
+				F366836128F85EF500073B31 /* Model */,
+				F366842628FDA02900073B31 /* Controller */,
 				F366833C28F8586200073B31 /* Info.plist */,
-				F366833428F8586100073B31 /* FIPETable.xcdatamodeld */,
 			);
 			path = FIPETable;
 			sourceTree = "<group>";
@@ -113,6 +148,7 @@
 		F366834428F8586200073B31 /* FIPETableTests */ = {
 			isa = PBXGroup;
 			children = (
+				F366839C28F997FB00073B31 /* Model */,
 				F366834528F8586200073B31 /* FIPETableTests.swift */,
 			);
 			path = FIPETableTests;
@@ -127,6 +163,84 @@
 			path = FIPETableUITests;
 			sourceTree = "<group>";
 		};
+		F366836128F85EF500073B31 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F366836628F85F4000073B31 /* VehicleBrand.swift */,
+				F366836928F85F8100073B31 /* Vehicle.swift */,
+				F366836C28F8718700073B31 /* ReferenceTable.swift */,
+				F366844D28FECF8D00073B31 /* CellIdentifiers.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F366836228F85EFB00073B31 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F366833928F8586200073B31 /* LaunchScreen.storyboard */,
+				F366836F28F8761700073B31 /* ListVehicleView.swift */,
+				F366837228F8763C00073B31 /* VehicleDetailsView.swift */,
+				F366842728FDBCD800073B31 /* VehicleBrandsTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F366836328F85F0100073B31 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				F366837A28F876B400073B31 /* VehicleBrandsViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		F366836428F85F0900073B31 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				F366832D28F8586100073B31 /* SceneDelegate.swift */,
+				F366832B28F8586100073B31 /* AppDelegate.swift */,
+				F366833728F8586200073B31 /* Assets.xcassets */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		F366837C28F8780B00073B31 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				F366833428F8586100073B31 /* FIPETable.xcdatamodeld */,
+				F366837D28F8781B00073B31 /* APIManager.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		F366839C28F997FB00073B31 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F366839D28F9982900073B31 /* VehicleBrandTests.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F366842628FDA02900073B31 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F366844F28FF1E2D00073B31 /* TabBar */,
+				F366837828F8768B00073B31 /* VehicleDetailsViewController.swift */,
+				F366837628F8767100073B31 /* VehiclesPerBrandListViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		F366844F28FF1E2D00073B31 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				F366845028FF1E4E00073B31 /* TabBarViewController.swift */,
+				F366845228FF20C000073B31 /* MotorcyclesListViewController.swift */,
+				F366845528FF20E100073B31 /* CarsListViewController.swift */,
+				F366845728FF20EF00073B31 /* TrucksListViewController.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -137,6 +251,7 @@
 				F366832428F8586100073B31 /* Sources */,
 				F366832528F8586100073B31 /* Frameworks */,
 				F366832628F8586100073B31 /* Resources */,
+				F366836028F85BEF00073B31 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -252,15 +367,50 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		F366836028F85BEF00073B31 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 12;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export PATH=\"$PATH:/opt/homebrew/bin\"\nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		F366832428F8586100073B31 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F366833028F8586100073B31 /* ViewController.swift in Sources */,
+				F366845128FF1E4E00073B31 /* TabBarViewController.swift in Sources */,
+				F366836D28F8718700073B31 /* ReferenceTable.swift in Sources */,
+				F366837B28F876B400073B31 /* VehicleBrandsViewModel.swift in Sources */,
+				F366845328FF20C000073B31 /* MotorcyclesListViewController.swift in Sources */,
+				F366836A28F85F8100073B31 /* Vehicle.swift in Sources */,
+				F366837928F8768B00073B31 /* VehicleDetailsViewController.swift in Sources */,
+				F366845628FF20E100073B31 /* CarsListViewController.swift in Sources */,
 				F366832C28F8586100073B31 /* AppDelegate.swift in Sources */,
+				F366837328F8763C00073B31 /* VehicleDetailsView.swift in Sources */,
 				F366833628F8586100073B31 /* FIPETable.xcdatamodeld in Sources */,
+				F366837E28F8781B00073B31 /* APIManager.swift in Sources */,
+				F366844E28FECF8D00073B31 /* CellIdentifiers.swift in Sources */,
 				F366832E28F8586100073B31 /* SceneDelegate.swift in Sources */,
+				F366842828FDBCD800073B31 /* VehicleBrandsTableViewCell.swift in Sources */,
+				F366836728F85F4000073B31 /* VehicleBrand.swift in Sources */,
+				F366837028F8761700073B31 /* ListVehicleView.swift in Sources */,
+				F366845828FF20EF00073B31 /* TrucksListViewController.swift in Sources */,
+				F366837728F8767100073B31 /* VehiclesPerBrandListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,6 +418,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F366836B28F85F8100073B31 /* Vehicle.swift in Sources */,
+				F366839E28F9982900073B31 /* VehicleBrandTests.swift in Sources */,
+				F366837128F8761700073B31 /* ListVehicleView.swift in Sources */,
+				F366836828F85F4000073B31 /* VehicleBrand.swift in Sources */,
+				F366836E28F8718700073B31 /* ReferenceTable.swift in Sources */,
+				F366837528F8764B00073B31 /* VehicleDetailsView.swift in Sources */,
 				F366834628F8586200073B31 /* FIPETableTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
