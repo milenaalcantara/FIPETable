@@ -16,7 +16,7 @@ Sua navegação se inicia com as opções de marcas entre motos, carros e caminh
 + Marca do veículo
   + Modelos disponibilizados pela marca selecionada
     + Quais os anos de fabricação do modelo escolhido
-      + Demais detalhes sobre o vehículo escolhido, como preço, tipo de combustível e outros.
+      + Demais detalhes sobre o veículo escolhido, como preço, tipo de combustível e outros.
 
 ## Como Rodar o APP
 Para usar o app, em seu mac, faça um clone do repositório com o seginte código: 
