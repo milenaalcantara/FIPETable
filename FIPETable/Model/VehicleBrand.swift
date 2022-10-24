@@ -9,11 +9,5 @@ import Foundation
 
 struct VehicleBrand: Codable {
     let nome: String
-    let valor: String
+    let codigo: String
 }
-/*
- {
- "nome": "AGRALE",
- "valor": "102"
- }
- */

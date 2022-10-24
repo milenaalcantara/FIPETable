@@ -13,31 +13,31 @@ class TabBarViewController: UITabBarController {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
 
-        configTabBar()
+        configureTabBar()
     }
 
-    func configTabBar() {
-        let motorcyclesVC = MotorcyclesListViewController()
-        let carsVC = CarsListViewController()
-        let trucksVC = TrucksListViewController()
+    func configureTabBar() {
+        let motorcyclesVC = BrandListViewController(vehicleBrandType: "motos")
+        let carsVC = BrandListViewController(vehicleBrandType: "carros")
+        let trucksVC = BrandListViewController(vehicleBrandType: "caminhoes")
 
         let motorcyclesTabItem = configureTabItem(
             viewController: motorcyclesVC,
-            viewTitle: "Motorcycle Brands",
+            viewTitle: "Brands",
             iconName: "bicycle",
             tabItemTitle: "Motorcycles"
         )
 
         let carsTabItem = configureTabItem(
             viewController: carsVC,
-            viewTitle: "Car Brands",
+            viewTitle: "Brands",
             iconName: "car",
             tabItemTitle: "Cars"
         )
 
         let trucksTabItem = configureTabItem(
             viewController: trucksVC,
-            viewTitle: "Truck Brands",
+            viewTitle: "Brands",
             iconName: "bus",
             tabItemTitle: "Trucks"
         )

@@ -2,27 +2,64 @@
 //  VehicleDetailsViewController.swift
 //  FIPETable
 //
-//  Created by Milena Lima de Alcântara on 13/10/22.
+//  Created by Milena Lima de Alcântara on 19/10/22.
 //
 
 import UIKit
 
 class VehicleDetailsViewController: UIViewController {
 
+    var viewModel = VehiclesViewModel()
+    var contentView = VehicleDetailsView()
+
+    var vehicleBrandCode: String
+    var vehicleBrandType: String
+    var vehicleModelCode: String
+    var vehicleYearModel: String
+
+    init(
+        vehicleBrandCode: String,
+        vehicleBrandType: String,
+        vehicleModelCode: String,
+        vehicleYearModel: String
+    ) {
+        self.vehicleBrandCode = vehicleBrandCode
+        self.vehicleBrandType = vehicleBrandType
+        self.vehicleModelCode = vehicleModelCode
+        self.vehicleYearModel = vehicleYearModel
+        super.init(nibName: nil, bundle: nil)
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
+    override func loadView() {
+        super.loadView()
+        self.view = contentView
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .systemBackground
 
-        // Do any additional setup after loading the view.
+        Task(priority: .background) {
+            await viewModel.fetchVehicle(
+                vehicleType: vehicleBrandType,
+                brandCode: vehicleBrandCode,
+                modelCode: vehicleModelCode,
+                yearsCode: vehicleYearModel
+            )
+
+            whenFinishLoading()
+        }
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func whenFinishLoading() {
+        if viewModel.vehicle != nil {
+            contentView.vehicle = viewModel.vehicle
+            contentView.progressView.isHidden = true
+            contentView.cardView.isHidden = false
+        }
     }
-    */
-
 }
