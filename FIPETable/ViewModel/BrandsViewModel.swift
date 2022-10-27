@@ -9,6 +9,7 @@ import Foundation
 
 class BrandsViewModel: ObservableObject {
     var apiManager: APIManager?
+
     @Published var vehicleBrands: [VehicleBrand] = [] // 1
     @Published var searchedVehicleBrands: [VehicleBrand] = []
 
@@ -22,9 +23,8 @@ class BrandsViewModel: ObservableObject {
     }
 
     func fetchVehicleBrands(vehicleType: String) async {
-        let allVehicleBrands = await APIManager.getBrandsPerVehicleType(vehicleType: vehicleType)
-        await publishVehicleBrands(vehicleBrands: allVehicleBrands)
+        let complementURL = "\(vehicleType)/marcas"
+        let allBrands = await APIManager.getArrayResponse(complementURL: complementURL) as [VehicleBrand]
+        await publishVehicleBrands(vehicleBrands: allBrands)
     }
-
-    // MARK: Brands Per Vehicle Type
 }

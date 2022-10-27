@@ -22,7 +22,7 @@ class BrandTableViewCell: UITableViewCell {
     private let brandName: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.textColor = .black
+        label.textColor = .label
         label.font = UIFont.systemFont(ofSize: 18)
         label.textAlignment = .left
         return label

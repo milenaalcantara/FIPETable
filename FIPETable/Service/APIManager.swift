@@ -11,23 +11,40 @@ class APIManager {
     static private let baseURL = "https://parallelum.com.br/fipe/api/v1"
     static private let decoder = JSONDecoder()
 
-    // MARK: Get Vehicles
-
-    static func getBrandsPerVehicleType(vehicleType: String) async -> [VehicleBrand] {
-        let url = URL(string: "\(baseURL)/\(vehicleType)/marcas")
-        var urlRequest = URLRequest(url: url!)
+    static func getArrayResponse<T: Codable>(complementURL: String) async -> [T] {
+        guard let url = URL(string: "\(baseURL)/\(complementURL)") else { return [] }
+        var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = "GET"
 
         do {
             let (data, _) = try await URLSession.shared.data(for: urlRequest)
-            let allVehicleBrands = try decoder.decode([VehicleBrand].self, from: data)
+            let allResponses = try decoder.decode([T].self, from: data)
 
-            return allVehicleBrands
+            return allResponses
         } catch {
             print("Error: \(error)") // remover depois, lançar um modal ou screen not found
             return []
         }
     }
+
+//    static func getSimpleResponse<T: Decodable>(complementURL: String) async -> T {
+//        guard let url = URL(string: "\(baseURL)/\(complementURL)")
+    //    else { return Decoder.self as! T } // como mudar isso -> Mentores
+//        var urlRequest = URLRequest(url: url)
+//        urlRequest.httpMethod = "GET"
+//
+//        do {
+//            let (data, _) = try await URLSession.shared.data(for: urlRequest)
+//            let response = try decoder.decode(T.self, from: data)
+//
+//            return response
+//        } catch {
+//            print("Error: \(error)") // remover depois, lançar um modal ou screen not found
+//        }
+//        return T.self as! T
+//    }
+
+    // MARK: Get Vehicles
 
     static func getVehicleModelsPerBrand(vehicleType: String, brandCode: String) async -> VehicleModelResponse {
         let url = URL(string: "\(baseURL)/\(vehicleType)/marcas/\(brandCode)/modelos")
@@ -42,26 +59,6 @@ class APIManager {
         } catch {
             print("Error: \(error)")
             return VehicleModelResponse.init(modelos: [])
-        }
-    }
-
-    static func getYearsOfVehicleModel(
-        vehicleType: String,
-        brandCode: String,
-        modelCode: String
-    ) async -> [VehicleYears] {
-        let url = URL(string: "\(baseURL)/\(vehicleType)/marcas/\(brandCode)/modelos/\(modelCode)/anos")
-        var urlRequest = URLRequest(url: url!)
-        urlRequest.httpMethod = "GET"
-
-        do {
-            let (data, _) = try await URLSession.shared.data(for: urlRequest)
-            let allYearsOfModel = try decoder.decode([VehicleYears].self, from: data)
-
-            return allYearsOfModel
-        } catch {
-            print("Error: \(error)")
-            return []
         }
     }
 

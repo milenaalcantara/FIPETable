@@ -25,12 +25,8 @@ class YearsViewModel: ObservableObject {
     }
 
     func fetchYearsModel(vehicleType: String, brandCode: String, modelCode: String) async {
-        let yearsModelResponse = await APIManager.getYearsOfVehicleModel(
-            vehicleType: vehicleType,
-            brandCode: brandCode,
-            modelCode: modelCode
-        )
-
-        await publishVehicleModels(yearsModel: yearsModelResponse)
+        let complementURL = "/\(vehicleType)/marcas/\(brandCode)/modelos/\(modelCode)/anos"
+        let allOfYears = await APIManager.getArrayResponse(complementURL: complementURL) as [VehicleYears]
+        await publishVehicleModels(yearsModel: allOfYears)
     }
 }
