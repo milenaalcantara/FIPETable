@@ -8,10 +8,10 @@
 import Foundation
 
 struct VehicleModelResponse: Codable {
-    let modelos: [VehicleModel]
+    let modelos: [ArrayResponse]
 }
 
-struct VehicleModel: Codable {
-    let nome: String
-    let codigo: Int
-}
+// struct VehicleModel: Codable {
+//    let nome: String
+//    let codigo: Int
+// }

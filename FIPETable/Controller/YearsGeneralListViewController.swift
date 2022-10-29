@@ -9,17 +9,17 @@ import UIKit
 
 class YearsGeneralListViewController: UIViewController {
 
-    var viewModel = YearsViewModel()
-    var contentView = YearsListView()
+    var viewModel = GenaralViewModel()
+    var contentView = ListView()
 
     var searchController = UISearchController()
     var searching = false
 
-    var activeYears: [VehicleYears] {
+    var activeYears: [ArrayResponse] {
         if searching {
-            return viewModel.searchedYearsModel
+            return viewModel.searchedList
         }
-        return viewModel.yearsModel
+        return viewModel.list
     }
 
     var vehicleBrandCode: String
@@ -51,12 +51,12 @@ class YearsGeneralListViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "\(String(describing: vehicleModelName)) Model" // pegar o nome do modelo
+        title = "\(String(describing: vehicleModelName))" // pegar o nome do modelo
 
         setupTableView()
         setupSearchController()
         Task(priority: .background) {
-            await viewModel.fetchYearsModel(
+            await viewModel.fetchData(
                 vehicleType: vehicleBrandType,
                 brandCode: vehicleBrandCode,
                 modelCode: vehicleModelCode
@@ -66,10 +66,10 @@ class YearsGeneralListViewController: UIViewController {
     }
 
     func whenFinishLoading() {
-        if !viewModel.yearsModel.isEmpty {
+        if !viewModel.list.isEmpty {
             contentView.progressView.isHidden = true
-            contentView.yearsTableView.isHidden = false
-            contentView.yearsTableView.reloadData()
+            contentView.tableView.isHidden = false
+            contentView.tableView.reloadData()
         }
     }
 
@@ -80,8 +80,8 @@ class YearsGeneralListViewController: UIViewController {
     }
 
     func setTableViewDelegates() {
-        contentView.yearsTableView.delegate = self
-        contentView.yearsTableView.dataSource = self
+        contentView.tableView.delegate = self
+        contentView.tableView.dataSource = self
     }
 
     // MARK: SearchBar
@@ -103,22 +103,22 @@ class YearsGeneralListViewController: UIViewController {
 extension YearsGeneralListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if searching {
-            return viewModel.searchedYearsModel.count
+            return viewModel.searchedList.count
         }
 
-        return viewModel.yearsModel.count
+        return viewModel.list.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(
-            withIdentifier: YearsTableViewCell.identifier,
+            withIdentifier: CustomTableViewCell.identifier,
             for: indexPath
-        ) as? YearsTableViewCell else { return UITableViewCell() }
+        ) as? CustomTableViewCell else { return UITableViewCell() }
 
         if searching {
-            cell.yearsModel = viewModel.searchedYearsModel[indexPath.row]
+            cell.item = viewModel.searchedList[indexPath.row]
         } else {
-            cell.yearsModel = viewModel.yearsModel[indexPath.row]
+            cell.item = viewModel.list[indexPath.row]
         }
 
         return cell
@@ -140,11 +140,11 @@ extension YearsGeneralListViewController: UISearchResultsUpdating, UISearchBarDe
     func updateSearchResults(for searchController: UISearchController) {
         guard let searchText = searchController.searchBar.text else { return }
 
-        viewModel.searchedYearsModel = viewModel.yearsModel.filter { year in
+        viewModel.searchedList = viewModel.list.filter { year in
             year.nome.localizedCaseInsensitiveContains(searchText)
         }
 
-        searching = !viewModel.searchedYearsModel.isEmpty
-        contentView.yearsTableView.reloadData()
+        searching = !viewModel.searchedList.isEmpty
+        contentView.tableView.reloadData()
     }
 }

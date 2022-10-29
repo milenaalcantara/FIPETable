@@ -51,43 +51,43 @@ class VehicleDetailsView: UIView {
         return label
     }()
 
-    lazy var brandView: DetailCell = {
-        let view = DetailCell()
+    lazy var brandView: CustomDetailViewCell = {
+        let view = CustomDetailViewCell()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = .clear
-        view.titleLabel.text = "Brand: "
+        view.titleLabel.text = "Marca: "
         return view
     }()
 
-    lazy var valueView: DetailCell = {
-        let view = DetailCell()
+    lazy var valueView: CustomDetailViewCell = {
+        let view = CustomDetailViewCell()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = .clear
-        view.titleLabel.text = "Value: "
+        view.titleLabel.text = "Valor: "
         return view
     }()
 
-    lazy var yearView: DetailCell = {
-        let view = DetailCell()
+    lazy var yearView: CustomDetailViewCell = {
+        let view = CustomDetailViewCell()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = .clear
-        view.titleLabel.text = "Year: "
+        view.titleLabel.text = "Ano: "
         return view
     }()
 
-    lazy var fuelView: DetailCell = {
-        let view = DetailCell()
+    lazy var fuelView: CustomDetailViewCell = {
+        let view = CustomDetailViewCell()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = .clear
-        view.titleLabel.text = "Fuel: "
+        view.titleLabel.text = "Combustível: "
         return view
     }()
 
-    lazy var fipeCodeView: DetailCell = {
-        let view = DetailCell()
+    lazy var fipeCodeView: CustomDetailViewCell = {
+        let view = CustomDetailViewCell()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = .clear
-        view.titleLabel.text = "FIPE Code: "
+        view.titleLabel.text = "Código FIPE: "
         return view
     }()
 

@@ -7,19 +7,19 @@
 
 import UIKit
 
-class BrandTableViewCell: UITableViewCell {
+class CustomTableViewCell: UITableViewCell {
 
-    static let identifier: String = "BrandCell"
+    static let identifier: String = "Cell"
 
-    var vehicleBrand: VehicleBrand? {
+    var item: ArrayResponse? {
         didSet {
             DispatchQueue.main.async { [weak self] in
-                self?.brandName.text = self?.vehicleBrand?.nome.capitalized
+                self?.name.text = self?.item?.nome.capitalized
             }
         }
     }
 
-    private let brandName: UILabel = {
+    private let name: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .label
@@ -41,15 +41,15 @@ class BrandTableViewCell: UITableViewCell {
     }
 }
 
-extension BrandTableViewCell: SettingsView {
+extension CustomTableViewCell: SettingsView {
     func setupSubviews() {
-        self.addSubview(brandName)
+        self.addSubview(name)
     }
 
     func setupConstraints() {
         NSLayoutConstraint.activate([
-            brandName.centerYAnchor.constraint(equalTo: self.centerYAnchor),
-            brandName.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20)
+            name.centerYAnchor.constraint(equalTo: self.centerYAnchor),
+            name.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20)
         ])
     }
 }

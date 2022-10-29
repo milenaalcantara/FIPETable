@@ -1,13 +1,13 @@
 //
-//  ModelsListView.swift
+//  ListView.swift
 //  FIPETable
 //
-//  Created by Milena Lima de Alcântara on 19/10/22.
+//  Created by Milena Lima de Alcântara on 18/10/22.
 //
 
 import UIKit
 
-class ModelsListView: UIView {
+class ListView: UIView {
 
     lazy var progressView: UIActivityIndicatorView = {
         let progressView = UIActivityIndicatorView(style: .large)
@@ -18,12 +18,12 @@ class ModelsListView: UIView {
         return progressView
     }()
 
-    lazy var modelsTableView: UITableView = {
+    lazy var tableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .plain)
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.register(
-            ModelsTableViewCell.self,
-            forCellReuseIdentifier: ModelsTableViewCell.identifier
+            CustomTableViewCell.self,
+            forCellReuseIdentifier: CustomTableViewCell.identifier
         )
         tableView.rowHeight = 70 // set row height
         tableView.isHidden = true
@@ -42,22 +42,21 @@ class ModelsListView: UIView {
     }
 }
 
-extension ModelsListView: SettingsView {
+extension ListView: SettingsView {
     func setupSubviews() {
-        self.addSubview(self.modelsTableView)
+        self.addSubview(self.tableView)
         self.addSubview(self.progressView)
     }
 
     func setupConstraints() {
         NSLayoutConstraint.activate([
-            self.modelsTableView.topAnchor.constraint(equalTo: self.topAnchor),
-            self.modelsTableView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
-            self.modelsTableView.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor),
-            self.modelsTableView.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor),
+            self.tableView.topAnchor.constraint(equalTo: self.topAnchor),
+            self.tableView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
+            self.tableView.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor),
+            self.tableView.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor),
 
             self.progressView.centerXAnchor.constraint(equalTo: self.centerXAnchor),
             self.progressView.centerYAnchor.constraint(equalTo: self.centerYAnchor)
         ])
     }
-
 }

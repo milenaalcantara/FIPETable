@@ -10,15 +10,15 @@ import UIKit
 class ModelsViewModel: ObservableObject {
     var apiManager: APIManager?
     private var vehicleModelResponse: VehicleModelResponse?
-    @Published var vehicleModels: [VehicleModel] = []
-    @Published var searchedVehicleModels: [VehicleModel] = []
+    @Published var vehicleModels: [ArrayResponse] = []
+    @Published var searchedVehicleModels: [ArrayResponse] = []
 
     init(apiManager: APIManager? = APIManager()) {
         self.apiManager = apiManager
     }
 
     // MARK: Brands Per Vehicle Type
-    func publishVehicleModels(vehicleModels: [VehicleModel]) async {
+    func publishVehicleModels(vehicleModels: [ArrayResponse]) async {
         for model in vehicleModels {
             self.vehicleModels.append(model)
         }

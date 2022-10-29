@@ -7,7 +7,7 @@
 
 import UIKit
 
-class DetailCell: UIView {
+class CustomDetailViewCell: UIView {
 
     lazy var titleLabel: UILabel = {
         let label = UILabel()
@@ -31,7 +31,7 @@ class DetailCell: UIView {
     }
 }
 
-extension DetailCell: SettingsView {
+extension CustomDetailViewCell: SettingsView {
     func setupSubviews() {
         self.addSubview(titleLabel)
         self.addSubview(valueLabel)

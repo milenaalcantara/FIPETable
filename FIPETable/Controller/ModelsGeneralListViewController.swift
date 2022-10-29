@@ -10,12 +10,12 @@ import UIKit
 class ModelsGeneralListViewController: UIViewController {
 
     var viewModel = ModelsViewModel()
-    var contentView = ModelsListView()
+    var contentView = ListView()
 
     var searchController = UISearchController()
     var searching = false
 
-    var activeModels: [VehicleModel] {
+    var activeModels: [ArrayResponse] {
         if searching {
             return viewModel.searchedVehicleModels
         }
@@ -48,7 +48,7 @@ class ModelsGeneralListViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "\(String(describing: vehicleBrandName)) Models" // pegar o nome do modelo
+        title = "Modelos \(String(describing: vehicleBrandName))" // pegar o nome do modelo
 
         setupTableView()
         setupSearchController()
@@ -64,8 +64,8 @@ class ModelsGeneralListViewController: UIViewController {
     func whenFinishLoading() {
         if !viewModel.vehicleModels.isEmpty {
             contentView.progressView.isHidden = true
-            contentView.modelsTableView.isHidden = false
-            contentView.modelsTableView.reloadData()
+            contentView.tableView.isHidden = false
+            contentView.tableView.reloadData()
         }
     }
 
@@ -76,8 +76,8 @@ class ModelsGeneralListViewController: UIViewController {
     }
 
     func setTableViewDelegates() {
-        contentView.modelsTableView.delegate = self
-        contentView.modelsTableView.dataSource = self
+        contentView.tableView.delegate = self
+        contentView.tableView.dataSource = self
     }
 
     // MARK: SearchBar
@@ -86,7 +86,7 @@ class ModelsGeneralListViewController: UIViewController {
         searchController.loadViewIfNeeded()
         searchController.searchResultsUpdater = self
         searchController.searchBar.delegate = self
-        searchController.searchBar.placeholder = "Search Model"
+        searchController.searchBar.placeholder = "Buscar modelo"
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.enablesReturnKeyAutomatically = false
         searchController.searchBar.returnKeyType = UIReturnKeyType.done
@@ -107,14 +107,14 @@ extension ModelsGeneralListViewController: UITableViewDelegate, UITableViewDataS
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(
-            withIdentifier: ModelsTableViewCell.identifier,
+            withIdentifier: CustomTableViewCell.identifier,
             for: indexPath
-        ) as? ModelsTableViewCell else { return UITableViewCell() }
+        ) as? CustomTableViewCell else { return UITableViewCell() }
 
         if searching {
-            cell.vehicleModel = viewModel.searchedVehicleModels[indexPath.row]
+            cell.item = viewModel.searchedVehicleModels[indexPath.row]
         } else {
-            cell.vehicleModel = viewModel.vehicleModels[indexPath.row]
+            cell.item = viewModel.vehicleModels[indexPath.row]
         }
 
         return cell
@@ -141,6 +141,6 @@ extension ModelsGeneralListViewController: UISearchResultsUpdating, UISearchBarD
         }
 
         searching = !viewModel.searchedVehicleModels.isEmpty
-        self.contentView.modelsTableView.reloadData()
+        self.contentView.tableView.reloadData()
     }
 }

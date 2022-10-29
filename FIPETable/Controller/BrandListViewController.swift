@@ -9,17 +9,17 @@ import UIKit
 
 class BrandListViewController: UIViewController {
 
-    var viewModel = BrandsViewModel()
-    var contentView = BrandsListView()
+    var viewModel = GenaralViewModel()
+    var contentView = ListView()
 
     let searchController = UISearchController(searchResultsController: nil)
     var searching = false
 
-    var activeBrands: [VehicleBrand] {
+    var activeBrands: [ArrayResponse] {
         if searching {
-            return viewModel.searchedVehicleBrands
+            return viewModel.searchedList
         }
-        return viewModel.vehicleBrands
+        return viewModel.list
     }
 
     var vehicleBrandType: String
@@ -46,16 +46,16 @@ class BrandListViewController: UIViewController {
         setupTableView()
         setupSearchController()
         Task(priority: .background) {
-            await viewModel.fetchVehicleBrands(vehicleType: vehicleBrandType)
+            await viewModel.fetchData(vehicleType: vehicleBrandType)
             whenFinishLoading()
         }
     }
 
     func whenFinishLoading() {
-        if !viewModel.vehicleBrands.isEmpty {
+        if !viewModel.list.isEmpty {
             contentView.progressView.isHidden = true
-            contentView.brandsTableView.isHidden = false
-            contentView.brandsTableView.reloadData()
+            contentView.tableView.isHidden = false
+            contentView.tableView.reloadData()
         }
     }
 
@@ -66,8 +66,8 @@ class BrandListViewController: UIViewController {
     }
 
     func setTableViewDelegates() {
-        contentView.brandsTableView.delegate = self
-        contentView.brandsTableView.dataSource = self
+        contentView.tableView.delegate = self
+        contentView.tableView.dataSource = self
     }
 
     // MARK: SearchBar
@@ -89,22 +89,22 @@ class BrandListViewController: UIViewController {
 extension BrandListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if searching {
-            return viewModel.searchedVehicleBrands.count
+            return viewModel.searchedList.count
         }
 
-        return viewModel.vehicleBrands.count
+        return viewModel.list.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(
-            withIdentifier: BrandTableViewCell.identifier,
+            withIdentifier: CustomTableViewCell.identifier,
             for: indexPath
-        ) as? BrandTableViewCell else { return UITableViewCell() }
+        ) as? CustomTableViewCell else { return UITableViewCell() }
 
         if searching {
-            cell.vehicleBrand = viewModel.searchedVehicleBrands[indexPath.row]
+            cell.item = viewModel.searchedList[indexPath.row]
         } else {
-            cell.vehicleBrand = viewModel.vehicleBrands[indexPath.row]
+            cell.item = viewModel.list[indexPath.row]
         }
 
         return cell
@@ -127,11 +127,11 @@ extension BrandListViewController: UISearchResultsUpdating, UISearchBarDelegate 
     func updateSearchResults(for searchController: UISearchController) {
         guard let searchText = searchController.searchBar.text else { return }
 
-        viewModel.searchedVehicleBrands = viewModel.vehicleBrands.filter { brand in
+        viewModel.searchedList = viewModel.list.filter { brand in
             brand.nome.localizedCaseInsensitiveContains(searchText)
         }
 
-        searching = !viewModel.searchedVehicleBrands.isEmpty
-        self.contentView.brandsTableView.reloadData()
+        searching = !viewModel.searchedList.isEmpty
+        self.contentView.tableView.reloadData()
     }
 }

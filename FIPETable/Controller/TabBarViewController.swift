@@ -23,23 +23,23 @@ class TabBarViewController: UITabBarController {
 
         let motorcyclesTabItem = configureTabItem(
             viewController: motorcyclesVC,
-            viewTitle: "Brands",
+            viewTitle: "Marcas",
             iconName: "bicycle",
-            tabItemTitle: "Motorcycles"
+            tabItemTitle: "Motos"
         )
 
         let carsTabItem = configureTabItem(
             viewController: carsVC,
-            viewTitle: "Brands",
+            viewTitle: "Marcas",
             iconName: "car",
-            tabItemTitle: "Cars"
+            tabItemTitle: "Carros"
         )
 
         let trucksTabItem = configureTabItem(
             viewController: trucksVC,
-            viewTitle: "Brands",
+            viewTitle: "Marcas",
             iconName: "bus",
-            tabItemTitle: "Trucks"
+            tabItemTitle: "Caminhões"
         )
 
         tabBar.tintColor = .darkGray

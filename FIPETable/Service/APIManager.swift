@@ -7,22 +7,32 @@
 
 import Foundation
 
-class APIManager {
-    static private let baseURL = "https://parallelum.com.br/fipe/api/v1"
-    static private let decoder = JSONDecoder()
+struct Constants {
+    static let baseURL = "https://parallelum.com.br/fipe/api/v1"
+    static let decoder = JSONDecoder()
+}
 
-    static func getArrayResponse<T: Codable>(complementURL: String) async -> [T] {
-        guard let url = URL(string: "\(baseURL)/\(complementURL)") else { return [] }
+enum APIError: Error {
+    case invalidURL
+}
+
+class APIManager {
+
+    static func getArrayResponse<T: Codable>(complementURL: String) async throws -> [T] {
+        guard let url = URL(string: "\(Constants.baseURL)/\(complementURL)") else {
+            throw APIError.invalidURL
+        }
+
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = "GET"
 
         do {
             let (data, _) = try await URLSession.shared.data(for: urlRequest)
-            let allResponses = try decoder.decode([T].self, from: data)
+            let allResponses = try Constants.decoder.decode([T].self, from: data)
 
             return allResponses
         } catch {
-            print("Error: \(error)") // remover depois, lançar um modal ou screen not found
+            print("Error: \(error.localizedDescription)") // remover depois, lançar um modal ou screen not found
             return []
         }
     }
@@ -47,13 +57,13 @@ class APIManager {
     // MARK: Get Vehicles
 
     static func getVehicleModelsPerBrand(vehicleType: String, brandCode: String) async -> VehicleModelResponse {
-        let url = URL(string: "\(baseURL)/\(vehicleType)/marcas/\(brandCode)/modelos")
+        let url = URL(string: "\(Constants.baseURL)/\(vehicleType)/marcas/\(brandCode)/modelos")
         var urlRequest = URLRequest(url: url!)
         urlRequest.httpMethod = "GET"
 
         do {
             let (data, _) = try await URLSession.shared.data(for: urlRequest)
-            let allModelsPerBrand = try decoder.decode(VehicleModelResponse.self, from: data)
+            let allModelsPerBrand = try Constants.decoder.decode(VehicleModelResponse.self, from: data)
 
             return allModelsPerBrand
         } catch {
@@ -68,13 +78,15 @@ class APIManager {
         modelCode: String,
         yearsCode: String
     ) async -> Vehicle {
-        let url = URL(string: "\(baseURL)/\(vehicleType)/marcas/\(brandCode)/modelos/\(modelCode)/anos/\(yearsCode)")
+        let url = URL(
+            string: "\(Constants.baseURL)/\(vehicleType)/marcas/\(brandCode)/modelos/\(modelCode)/anos/\(yearsCode)"
+        )
         var urlRequest = URLRequest(url: url!)
         urlRequest.httpMethod = "GET"
 
         do {
             let (data, _) = try await URLSession.shared.data(for: urlRequest)
-            let vehicle = try decoder.decode(Vehicle.self, from: data)
+            let vehicle = try Constants.decoder.decode(Vehicle.self, from: data)
 
             return vehicle
         } catch {
