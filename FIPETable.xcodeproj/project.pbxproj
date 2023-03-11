@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		F3597DA62906DBB600C894D6 /* VehicleDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3597DA52906DBB600C894D6 /* VehicleDetailsViewController.swift */; };
 		F3597DA82906DC1200C894D6 /* VehicleDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3597DA72906DC1200C894D6 /* VehicleDetailsView.swift */; };
+		F3597DAF2906DC9600C894D6 /* VehicleBrand.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3597DAD2906DC9600C894D6 /* VehicleBrand.swift */; };
 		F3597DB02906DC9600C894D6 /* Vehicle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3597DAE2906DC9600C894D6 /* Vehicle.swift */; };
 		F3597DB32906DD3500C894D6 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3597DB22906DD3500C894D6 /* SettingsView.swift */; };
 		F3597DB82906F78200C894D6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3597DAB2906DC6900C894D6 /* LaunchScreen.storyboard */; };
@@ -29,10 +30,14 @@
 		F36684F12906D85300073B31 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36684EC2906D85300073B31 /* TabBarViewController.swift */; };
 		F36684F22906D85300073B31 /* BrandListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36684ED2906D85300073B31 /* BrandListViewController.swift */; };
 		F36684F72906D86700073B31 /* VehicleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36684F52906D86700073B31 /* VehicleModel.swift */; };
-		F36685032906D87000073B31 /* CustomDetailViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36684FB2906D87000073B31 /* CustomDetailViewCell.swift */; };
-		F36685052906D87000073B31 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36684FD2906D87000073B31 /* CustomTableViewCell.swift */; };
-		F36685082906D87000073B31 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36685012906D87000073B31 /* ListView.swift */; };
-		F39FDC36290CC0EF0050973B /* ArrayResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39FDC35290CC0EF0050973B /* ArrayResponse.swift */; };
+		F36685022906D87000073B31 /* YearsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36684FA2906D87000073B31 /* YearsTableViewCell.swift */; };
+		F36685032906D87000073B31 /* DetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36684FB2906D87000073B31 /* DetailCell.swift */; };
+		F36685042906D87000073B31 /* ModelsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36684FC2906D87000073B31 /* ModelsTableViewCell.swift */; };
+		F36685052906D87000073B31 /* BrandTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36684FD2906D87000073B31 /* BrandTableViewCell.swift */; };
+		F36685062906D87000073B31 /* ModelsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36684FF2906D87000073B31 /* ModelsListView.swift */; };
+		F36685072906D87000073B31 /* YearsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36685002906D87000073B31 /* YearsListView.swift */; };
+		F36685082906D87000073B31 /* BrandsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36685012906D87000073B31 /* BrandsListView.swift */; };
+		F3BAFB1B2992879900B52C80 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3597DAB2906DC6900C894D6 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +61,7 @@
 		F3597DA52906DBB600C894D6 /* VehicleDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VehicleDetailsViewController.swift; sourceTree = "<group>"; };
 		F3597DA72906DC1200C894D6 /* VehicleDetailsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VehicleDetailsView.swift; sourceTree = "<group>"; };
 		F3597DAB2906DC6900C894D6 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F3597DAD2906DC9600C894D6 /* VehicleBrand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VehicleBrand.swift; sourceTree = "<group>"; };
 		F3597DAE2906DC9600C894D6 /* Vehicle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vehicle.swift; sourceTree = "<group>"; };
 		F3597DB22906DD3500C894D6 /* SettingsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		F366832828F8586100073B31 /* FIPETable.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FIPETable.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -70,8 +76,11 @@
 		F366839D28F9982900073B31 /* VehicleBrandTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleBrandTests.swift; sourceTree = "<group>"; };
 		F36684D42906D76F00073B31 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SceneDelegate.swift; path = FIPETable/Resources/SceneDelegate.swift; sourceTree = SOURCE_ROOT; };
 		F36684D52906D76F00073B31 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = FIPETable/Resources/Assets.xcassets; sourceTree = SOURCE_ROOT; };
-		F36684D62906D76F00073B31 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = FIPETable/Resources/AppDelegate.swift; sourceTree = SOURCE_ROOT; };
-		F36684DE2906D83000073B31 /* GenaralViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenaralViewModel.swift; sourceTree = "<group>"; };
+		F36684D62906D76F00073B31 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = FIPETable/Resource/AppDelegate.swift; sourceTree = SOURCE_ROOT; };
+		F36684DC2906D83000073B31 /* ProjectFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectFile.swift; sourceTree = "<group>"; };
+		F36684DD2906D83000073B31 /* YearsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YearsViewModel.swift; sourceTree = "<group>"; };
+		F36684DE2906D83000073B31 /* BrandsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrandsViewModel.swift; sourceTree = "<group>"; };
+		F36684DF2906D83000073B31 /* Project.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
 		F36684E02906D83000073B31 /* VehiclesViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VehiclesViewModel.swift; sourceTree = "<group>"; };
 		F36684E12906D83000073B31 /* ModelsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelsViewModel.swift; sourceTree = "<group>"; };
 		F36684E92906D85300073B31 /* ModelsGeneralListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelsGeneralListViewController.swift; sourceTree = "<group>"; };
@@ -234,7 +243,6 @@
 		F36684F82906D87000073B31 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				F39FDC37290D5DE40050973B /* Cell */,
 				F3597DAB2906DC6900C894D6 /* LaunchScreen.storyboard */,
 				F3597DA72906DC1200C894D6 /* VehicleDetailsView.swift */,
 				F36684FB2906D87000073B31 /* CustomDetailViewCell.swift */,
@@ -357,7 +365,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F36684D82906D76F00073B31 /* Assets.xcassets in Resources */,
-				F3597DB82906F78200C894D6 /* LaunchScreen.storyboard in Resources */,
+				F3BAFB1B2992879900B52C80 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
