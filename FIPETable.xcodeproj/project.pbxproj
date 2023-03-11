@@ -40,6 +40,8 @@
 		F36685062906D87000073B31 /* ModelsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36684FF2906D87000073B31 /* ModelsListView.swift */; };
 		F36685072906D87000073B31 /* YearsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36685002906D87000073B31 /* YearsListView.swift */; };
 		F36685082906D87000073B31 /* BrandsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36685012906D87000073B31 /* BrandsListView.swift */; };
+		F383C11529BCB93B00A78297 /* GenericTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F383C11429BCB93B00A78297 /* GenericTableView.swift */; };
+		F383C11729BCC96C00A78297 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = F383C11629BCC96C00A78297 /* .swiftlint.yml */; };
 		F3BAFB1B2992879900B52C80 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3597DAB2906DC6900C894D6 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -99,6 +101,8 @@
 		F36684FF2906D87000073B31 /* ModelsListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelsListView.swift; sourceTree = "<group>"; };
 		F36685002906D87000073B31 /* YearsListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YearsListView.swift; sourceTree = "<group>"; };
 		F36685012906D87000073B31 /* BrandsListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrandsListView.swift; sourceTree = "<group>"; };
+		F383C11429BCB93B00A78297 /* GenericTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericTableView.swift; sourceTree = "<group>"; };
+		F383C11629BCC96C00A78297 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +170,7 @@
 				F366837C28F8780B00073B31 /* Service */,
 				F366836428F85F0900073B31 /* Resource */,
 				F366833C28F8586200073B31 /* Info.plist */,
+				F383C11629BCC96C00A78297 /* .swiftlint.yml */,
 			);
 			path = FIPETable;
 			sourceTree = "<group>";
@@ -279,6 +284,7 @@
 				F36684FF2906D87000073B31 /* ModelsListView.swift */,
 				F36685002906D87000073B31 /* YearsListView.swift */,
 				F36685012906D87000073B31 /* BrandsListView.swift */,
+				F383C11429BCB93B00A78297 /* GenericTableView.swift */,
 			);
 			path = Lists;
 			sourceTree = "<group>";
@@ -388,6 +394,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F383C11729BCC96C00A78297 /* .swiftlint.yml in Resources */,
 				F36684D82906D76F00073B31 /* Assets.xcassets in Resources */,
 				F3BAFB1B2992879900B52C80 /* LaunchScreen.storyboard in Resources */,
 			);
@@ -438,6 +445,7 @@
 				F3597DB02906DC9600C894D6 /* Vehicle.swift in Sources */,
 				F36684E22906D83000073B31 /* ProjectFile.swift in Sources */,
 				F36684F62906D86700073B31 /* VehicleYears.swift in Sources */,
+				F383C11529BCB93B00A78297 /* GenericTableView.swift in Sources */,
 				F3597DA62906DBB600C894D6 /* VehicleDetailsViewController.swift in Sources */,
 				F36684F22906D85300073B31 /* BrandListViewController.swift in Sources */,
 				F36684F12906D85300073B31 /* TabBarViewController.swift in Sources */,
