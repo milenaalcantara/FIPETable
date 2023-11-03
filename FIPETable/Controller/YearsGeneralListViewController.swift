@@ -51,7 +51,7 @@ class YearsGeneralListViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "\(String(describing: vehicleModelName)) Model" // pegar o nome do modelo
+        title = "\(String(describing: vehicleModelName))" // pegar o nome do modelo
 
         setupTableView()
         setupSearchController()
@@ -90,7 +90,7 @@ class YearsGeneralListViewController: UIViewController {
         searchController.loadViewIfNeeded()
         searchController.searchResultsUpdater = self
         searchController.searchBar.delegate = self
-        searchController.searchBar.placeholder = "Search Model"
+        searchController.searchBar.placeholder = "\(localized("search_title_year_list"))"
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.enablesReturnKeyAutomatically = false
         searchController.searchBar.returnKeyType = UIReturnKeyType.done
@@ -120,6 +120,8 @@ extension YearsGeneralListViewController: UITableViewDelegate, UITableViewDataSo
         } else {
             cell.yearsModel = viewModel.yearsModel[indexPath.row]
         }
+        
+        cell.accessoryType = .disclosureIndicator
 
         return cell
     }

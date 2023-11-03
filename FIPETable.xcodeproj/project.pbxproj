@@ -40,6 +40,7 @@
 		F36685062906D87000073B31 /* ModelsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36684FF2906D87000073B31 /* ModelsListView.swift */; };
 		F36685072906D87000073B31 /* YearsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36685002906D87000073B31 /* YearsListView.swift */; };
 		F36685082906D87000073B31 /* BrandsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36685012906D87000073B31 /* BrandsListView.swift */; };
+		F392F3592AEEE513003DA815 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = F392F3582AEEE513003DA815 /* Localizable.xcstrings */; };
 		F3BAFB1B2992879900B52C80 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3597DAB2906DC6900C894D6 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -99,6 +100,7 @@
 		F36684FF2906D87000073B31 /* ModelsListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelsListView.swift; sourceTree = "<group>"; };
 		F36685002906D87000073B31 /* YearsListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YearsListView.swift; sourceTree = "<group>"; };
 		F36685012906D87000073B31 /* BrandsListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrandsListView.swift; sourceTree = "<group>"; };
+		F392F3582AEEE513003DA815 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -191,6 +193,7 @@
 		F366836428F85F0900073B31 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				F392F3422AEED767003DA815 /* Localization */,
 				F36684D62906D76F00073B31 /* AppDelegate.swift */,
 				F36684D52906D76F00073B31 /* Assets.xcassets */,
 				F36684D42906D76F00073B31 /* SceneDelegate.swift */,
@@ -283,6 +286,14 @@
 			path = Lists;
 			sourceTree = "<group>";
 		};
+		F392F3422AEED767003DA815 /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				F392F3582AEEE513003DA815 /* Localizable.xcstrings */,
+			);
+			path = Localization;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -293,13 +304,14 @@
 				F366832428F8586100073B31 /* Sources */,
 				F366832528F8586100073B31 /* Frameworks */,
 				F366832628F8586100073B31 /* Resources */,
-				F366836028F85BEF00073B31 /* ShellScript */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = FIPETable;
+			packageProductDependencies = (
+			);
 			productName = FIPETable;
 			productReference = F366832828F8586100073B31 /* FIPETable.app */;
 			productType = "com.apple.product-type.application";
@@ -348,7 +360,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1400;
-				LastUpgradeCheck = 1400;
+				LastUpgradeCheck = 1500;
 				TargetAttributes = {
 					F366832728F8586100073B31 = {
 						CreatedOnToolsVersion = 14.0.1;
@@ -365,13 +377,17 @@
 			};
 			buildConfigurationList = F366832328F8586100073B31 /* Build configuration list for PBXProject "FIPETable" */;
 			compatibilityVersion = "Xcode 14.0";
-			developmentRegion = en;
+			developmentRegion = "pt-BR";
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				"pt-BR",
+				es,
 				Base,
 			);
 			mainGroup = F366831F28F8586100073B31;
+			packageReferences = (
+			);
 			productRefGroup = F366832928F8586100073B31 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -389,6 +405,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F36684D82906D76F00073B31 /* Assets.xcassets in Resources */,
+				F392F3592AEEE513003DA815 /* Localizable.xcstrings in Resources */,
 				F3BAFB1B2992879900B52C80 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -408,27 +425,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		F366836028F85BEF00073B31 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			alwaysOutOfDate = 1;
-			buildActionMask = 12;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "export PATH=\"$PATH:/opt/homebrew/bin\"\nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F366832428F8586100073B31 /* Sources */ = {
@@ -504,6 +500,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -536,6 +533,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -564,6 +562,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -596,6 +595,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;

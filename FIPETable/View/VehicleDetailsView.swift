@@ -26,7 +26,6 @@ class VehicleDetailsView: UIView {
         progressView.translatesAutoresizingMaskIntoConstraints = false
         progressView.startAnimating()
         progressView.isHidden = false
-
         return progressView
     }()
 
@@ -36,7 +35,6 @@ class VehicleDetailsView: UIView {
         view.backgroundColor = .lightGray
         view.layer.cornerRadius = 10
         view.isHidden = true
-
         return view
     }()
 
@@ -55,7 +53,7 @@ class VehicleDetailsView: UIView {
         let view = DetailCell()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = .clear
-        view.titleLabel.text = "Brand: "
+        view.titleLabel.text = "\(localized("details_brand_title")) : "
         return view
     }()
 
@@ -63,7 +61,7 @@ class VehicleDetailsView: UIView {
         let view = DetailCell()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = .clear
-        view.titleLabel.text = "Value: "
+        view.titleLabel.text = "\(localized("details_value_title")) : "
         return view
     }()
 
@@ -71,7 +69,7 @@ class VehicleDetailsView: UIView {
         let view = DetailCell()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = .clear
-        view.titleLabel.text = "Year: "
+        view.titleLabel.text = "\(localized("details_year_title")) : "
         return view
     }()
 
@@ -79,7 +77,7 @@ class VehicleDetailsView: UIView {
         let view = DetailCell()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = .clear
-        view.titleLabel.text = "Fuel: "
+        view.titleLabel.text = "\(localized("details_fuel_title")) : "
         return view
     }()
 
@@ -87,13 +85,12 @@ class VehicleDetailsView: UIView {
         let view = DetailCell()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = .clear
-        view.titleLabel.text = "FIPE Code: "
+        view.titleLabel.text = "\(localized("details_fipe_code_title")) : "
         return view
     }()
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-
         buildLayoutView()
     }
 

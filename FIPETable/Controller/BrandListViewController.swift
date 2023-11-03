@@ -76,7 +76,7 @@ class BrandListViewController: UIViewController {
         searchController.loadViewIfNeeded()
         searchController.searchResultsUpdater = self
         searchController.searchBar.delegate = self
-        searchController.searchBar.placeholder = "Search Brand"
+        searchController.searchBar.placeholder = "\(localized("search_title_brand_list"))"
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.enablesReturnKeyAutomatically = false
         searchController.searchBar.returnKeyType = UIReturnKeyType.done
@@ -106,6 +106,8 @@ extension BrandListViewController: UITableViewDelegate, UITableViewDataSource {
         } else {
             cell.vehicleBrand = viewModel.vehicleBrands[indexPath.row]
         }
+        
+        cell.accessoryType = .disclosureIndicator
 
         return cell
     }

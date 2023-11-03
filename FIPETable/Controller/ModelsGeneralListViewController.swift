@@ -48,7 +48,7 @@ class ModelsGeneralListViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "\(String(describing: vehicleBrandName)) Models" // pegar o nome do modelo
+        title = "\(String(describing: vehicleBrandName))" // pegar o nome do modelo
 
         setupTableView()
         setupSearchController()
@@ -86,7 +86,7 @@ class ModelsGeneralListViewController: UIViewController {
         searchController.loadViewIfNeeded()
         searchController.searchResultsUpdater = self
         searchController.searchBar.delegate = self
-        searchController.searchBar.placeholder = "Search Model"
+        searchController.searchBar.placeholder = "\(localized("search_title_model_list"))"
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.enablesReturnKeyAutomatically = false
         searchController.searchBar.returnKeyType = UIReturnKeyType.done
@@ -116,6 +116,8 @@ extension ModelsGeneralListViewController: UITableViewDelegate, UITableViewDataS
         } else {
             cell.vehicleModel = viewModel.vehicleModels[indexPath.row]
         }
+        
+        cell.accessoryType = .disclosureIndicator
 
         return cell
     }
